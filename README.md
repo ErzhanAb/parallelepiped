@@ -11,8 +11,9 @@ Before starting, make sure you have Python version 3.8 or higher installed.
 ### 1. Cloning the Repository
 First, clone the project repository:
 ```sh
-git clone https://github.com/ErzhanAb/parallelepiped.git
+mkdir parallelepiped
 cd parallelepiped
+git clone https://github.com/ErzhanAb/parallelepiped.git
 ```
 
 ### 2. Creating the Output Folder

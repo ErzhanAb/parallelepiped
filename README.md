@@ -41,5 +41,4 @@ After executing the script, two files will appear in the `outputs` folder:
 │── outputs/              # Folder for output data
 │   ├── characteristics.json  # File with figures' characteristics
 │   ├── statistics.json       # File with calculated statistics
-│── README.md             # This file
 ```

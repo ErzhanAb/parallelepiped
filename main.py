@@ -1,5 +1,4 @@
 # Import modules
-import json
 from utils.func import read_json
 from utils.func import get_characteristics
 from utils.func import get_statistics

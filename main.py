@@ -1,4 +1,4 @@
-# Импорт модулей
+# Import modules
 import json
 from utils.func import read_json
 from utils.func import get_characteristics
@@ -7,22 +7,22 @@ from utils.func import create_json
 from utils.func import print_msg
 
 
-# Чтение файла 'parallelepipeds.json'
+# Reading file 'parallelepipeds.json'
 p = read_json('parallelepipeds.json')
 
 
-# Создание и генерация словаря 'characteristics'
+# Creating and generating the 'characteristics' dictionary
 characteristics = get_characteristics(p)
 
 
-# Создание и генерация словаря 'statistics'
+# Creating and generating the 'statistics' dictionary
 statistics = get_statistics(characteristics)
 
 
-# Вывод сообщений о выполнении программы
+# Outputting program execution messages
 print_msg()
 
 
-# Создание json файлов
+# Creating json files
 create_json('outputs/characteristics.json', characteristics)
 create_json('outputs/statistics.json', statistics)

@@ -1,4 +1,4 @@
-# ============================================================ Импорт модулей ============================================================ #
+# ============================================================ Import modules ============================================================ #
 
 import json
 import math as mt
@@ -8,11 +8,11 @@ from time import sleep
 
 # ============================================================ parallelepipeds.json ============================================================ #
 
-# Функция для открытия 'parallelepipeds.json'
+# Function to open 'parallelepipeds.json'
 def read_json(file) -> dict:
 
     '''
-    Функция принимает один аргумент - json файл для чтения и возвращает файл в виде словаря
+    The function takes one argument - a json file to read and returns the file as a dictionary
     '''
 
     with open(file, 'r') as f:
@@ -23,7 +23,7 @@ def read_json(file) -> dict:
 
 # ============================================================ characteristics ============================================================ #
 
-# Функции для генерации словаря 'characteristics'
+# Functions for generating the 'characteristics' dictionary
 def get_diag(a: float, b: float, c: float) -> float:
   return mt.sqrt(a**2 + b**2 + c**2)
 
@@ -61,11 +61,11 @@ def process(a: float, b: float, c: float) -> dict:
   }
   return fig_dict
 
-# Функция для создания словаря 'characteristics'
+# Function to create dictionary 'characteristics'
 def get_characteristics(a: dict) -> dict:
     
     '''
-    Функция принимает один аргумент - словарь и возвращает новый сгенерированный словарь после вычислений
+    The function takes one argument - a dictionary and returns a new generated dictionary after calculations
     '''
 
     characteristics = {}
@@ -80,11 +80,11 @@ def get_characteristics(a: dict) -> dict:
 
 # ============================================================ statistics ============================================================ #
 
-# Функция для создания словаря 'statistics'
+# Function to create dictionary 'statistics'
 def get_statistics(a: dict) -> dict:
     
     '''
-    Функция принимает один аргумент - словарь и возвращает новый словарь, содержащий средние значения
+    The function takes one argument - a dictionary and returns a new dictionary containing the average values
     '''
     
     statistics = {
@@ -113,27 +113,27 @@ def get_statistics(a: dict) -> dict:
 
 # ============================================================ characteristics.json и statistics.json ============================================================ #
 
-# Функция для создания файлов 'characteristics.json' и 'statistics.json'
+# Function to create 'characteristics.json' and 'statistics.json' files
 def create_json(filename: str, file: dict) -> None:
     
     '''
-    Функция принимает два аргумента:
-    1) filename - путь для создания файла
-    2) file - словарь, из которого создается файл
+    The function takes two arguments:
+    1) filename - path to create file
+    2) file - dictionary from which file is created
     '''
     
     with open(filename, 'w') as f:
         json.dump(file, f, indent = 4)
-    print(f'Создан файл в директорию: {filename}')
+    print(f'File created in directory: {filename}')
 
 
 
-# ============================================================ Вывод сообщений ============================================================ #
+# ============================================================ Outputting messages ============================================================ #
 
 def print_msg() -> None:
     
     '''
-    Функция выводит инфоромацию выполнения программы
+    The function outputs program execution information
     '''
 
     pict_list = ['MY FIRST SCRIPT\n',
@@ -163,13 +163,13 @@ def print_msg() -> None:
     statistics = get_statistics(characteristics)
     print()
     print('================================================================================')
-    print(f'Среднее значение всех главных диагоналей: {statistics["avg_diag"]}')
-    print(f'Среднее значение всех объемов параллелограмма: {statistics["avg_volume"]}')
-    print(f'Среднее значение всех площадей поверхности параллелограмма: {statistics["avg_surface_area"]}')
-    print(f'Среднее значение всех углов "альфа": {statistics["avg_alpha"]}')
-    print(f'Среднее значение всех углов "бета": {statistics["avg_beta"]}')
-    print(f'Среднее значение всех углов "гамма": {statistics["avg_gamma"]}')
-    print(f'Среднее значение всех радиусов описанной сферы: {statistics["avg_radius_described_sphere"]}')
-    print(f'Среднее значение всех объемов описанной сферы: {statistics["avg_volume_described_sphere"]}')
+    print(f'Average of all main diagonals: {statistics["avg_diag"]}')
+    print(f'The average value of all volumes of a parallelogram: {statistics["avg_volume"]}')
+    print(f'The average value of all surface areas of a parallelogram: {statistics["avg_surface_area"]}')
+    print(f'Average value of all angles "alpha": {statistics["avg_alpha"]}')
+    print(f'The average value of all angles is "beta": {statistics["avg_beta"]}')
+    print(f'Average value of all angles "gamma": {statistics["avg_gamma"]}')
+    print(f'The average value of all radii of the circumscribed sphere: {statistics["avg_radius_described_sphere"]}')
+    print(f'The average value of all volumes of the circumscribed sphere: {statistics["avg_volume_described_sphere"]}')
     print('================================================================================')
     print()

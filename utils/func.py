@@ -25,41 +25,41 @@ def read_json(file) -> dict:
 
 # Functions for generating the 'characteristics' dictionary
 def get_diag(a: float, b: float, c: float) -> float:
-  return mt.sqrt(a**2 + b**2 + c**2)
+    return mt.sqrt(a**2 + b**2 + c**2)
 
 def get_volume(a: float, b: float, c: float) -> float:
-  return a*b*c
+    return a*b*c
 
 def get_surface(a: float, b: float, c: float) -> float:
-  return 2* (a*b + a*c + b*c)
+    return 2* (a*b + a*c + b*c)
 
 def get_alpha(a: float, b: float, c: float) -> float:
-  return mt.degrees(mt.acos(a/mt.sqrt(a**2 + b**2 + c**2)))
+    return mt.degrees(mt.acos(a/mt.sqrt(a**2 + b**2 + c**2)))
 
 def get_beta(a: float, b: float, c: float) -> float:
-  return mt.degrees(mt.acos(b/mt.sqrt(a**2 + b**2 + c**2)))
+    return mt.degrees(mt.acos(b/mt.sqrt(a**2 + b**2 + c**2)))
 
 def get_gamma(a: float, b: float, c: float) -> float:
-  return mt.degrees(mt.acos(c/mt.sqrt(a**2 + b**2 + c**2)))
+    return mt.degrees(mt.acos(c/mt.sqrt(a**2 + b**2 + c**2)))
 
 def get_sphr_radius(a: float, b: float, c: float) -> float:
-  return mt.sqrt(a**2 + b**2 + c**2) / 2
+    return mt.sqrt(a**2 + b**2 + c**2) / 2
 
 def get_sphr_volume(a: float, b: float, c: float) -> float:
-  return 4/3*mt.pi * (mt.sqrt(a**2 + b**2 + c**2) / 2)**3
+    return 4/3*mt.pi * (mt.sqrt(a**2 + b**2 + c**2) / 2)**3
 
 def process(a: float, b: float, c: float) -> dict:
-  fig_dict = {
-    "diag": str(get_diag(a, b, c)),
-    "volume": str(get_volume(a, b, c)),
-    "surface_area": str(get_surface(a, b, c)), 
-    "alpha": str(get_alpha(a, b, c)),
-    "beta": str(get_beta(a, b, c)),
-    "gamma": str(get_gamma(a, b, c)),
-    "radius_described_sphere": str(get_sphr_radius(a, b, c)),
-    "volume_described_sphere": str(get_sphr_volume(a, b, c))
-  }
-  return fig_dict
+    fig_dict = {
+        "diag": str(get_diag(a, b, c)),
+        "volume": str(get_volume(a, b, c)),
+        "surface_area": str(get_surface(a, b, c)), 
+        "alpha": str(get_alpha(a, b, c)),
+        "beta": str(get_beta(a, b, c)),
+        "gamma": str(get_gamma(a, b, c)),
+        "radius_described_sphere": str(get_sphr_radius(a, b, c)),
+        "volume_described_sphere": str(get_sphr_volume(a, b, c))
+    }
+    return fig_dict
 
 # Function to create dictionary 'characteristics'
 def get_characteristics(a: dict) -> dict:
